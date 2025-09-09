@@ -52,7 +52,6 @@ public class Transparent : MonoBehaviour
     private void Update()
     {
         var v3 = Input.mousePosition;
-        v3.z = 1000.0f;
     
         
         bool hit2D = Physics2D.OverlapPoint(Camera.main.ScreenToWorldPoint(v3)) != null;

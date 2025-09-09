@@ -14,10 +14,10 @@ public class WindowbatWidth : MonoBehaviour, IPointerDownHandler, IPointerEnterH
     {
         mousePosition = (Vector2)Input.mousePosition;
         holdWindow = true;
-        var v3 = Input.mousePosition;
-        v3.z = 1000;
-        v3 = Camera.main.ScreenToWorldPoint(v3);
-        offset = this.transform.position - v3;
+
+        Vector3 v3 = Input.mousePosition;
+        v3.z = Mathf.Abs(Camera.main.transform.position.z - this.transform.position.z);
+        offset = this.transform.position - Camera.main.ScreenToWorldPoint(v3);
     }
 
     public void OnPointerUp(PointerEventData eventData)
@@ -32,23 +32,16 @@ public class WindowbatWidth : MonoBehaviour, IPointerDownHandler, IPointerEnterH
 
     public void OnPointerExit(PointerEventData eventData)
     {
-
+     
     }
     
     void Update()
     {
-        
         if (holdWindow)
         {
-            var v3 = Input.mousePosition;
-            v3.z = 1000.0f;
-            v3 = Camera.main.ScreenToWorldPoint(v3);
-            this.transform.position = v3 + offset;
+            Vector3 v3 = Input.mousePosition;
+            v3.z = Mathf.Abs(Camera.main.transform.position.z - this.transform.position.z); 
+            this.transform.position = Camera.main.ScreenToWorldPoint(v3) + offset;
         }
     }
-
-    
 }
-
-        
-
