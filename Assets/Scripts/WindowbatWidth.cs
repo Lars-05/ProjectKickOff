@@ -35,11 +35,8 @@ public class WindowbatWidth : MonoBehaviour, IPointerDownHandler, IPointerEnterH
         
         if (holdWindow)
         {
-           
-            Vector2 deltaMousePos =(Vector2)Input.mousePosition -  mousePosition;
-            Vector2 appPos = this.transform.position;
-            appPos += deltaMousePos; 
-            this.transform.position = appPos;
+            
+            this.transform.position = new Vector2(-Input.mousePosition.x, Input.mousePosition.y);
 
         }
     }
