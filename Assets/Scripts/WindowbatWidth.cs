@@ -13,6 +13,7 @@ public class WindowbatWidth : MonoBehaviour, IPointerDownHandler, IPointerEnterH
     {
         mousePosition = (Vector2)Input.mousePosition;
         holdWindow = true;
+        Debug.Log(Input.mousePosition);
     }
 
     public void OnPointerUp(PointerEventData eventData)
@@ -35,9 +36,10 @@ public class WindowbatWidth : MonoBehaviour, IPointerDownHandler, IPointerEnterH
         
         if (holdWindow)
         {
-            
-            this.transform.position = new Vector2(-Input.mousePosition.x, Input.mousePosition.y);
-
+            var v3 = Input.mousePosition;
+            v3.z = 1000.0f;
+            v3 = Camera.main.ScreenToWorldPoint(v3);
+            this.transform.position = v3;
         }
     }
 
