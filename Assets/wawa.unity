@@ -498,7 +498,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 614387651}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3c1294c98dd21e14ea41ef6d4b14fa1b, type: 3}
   m_Name: 
@@ -729,7 +729,7 @@ Transform:
   m_GameObject: {fileID: 1884494700}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 234, y: 265, z: 996}
+  m_LocalPosition: {x: 234, y: 265, z: 1000}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -801,8 +801,8 @@ SceneRoots:
   m_Roots:
   - {fileID: 1884494703}
   - {fileID: 412242357}
-  - {fileID: 614387653}
   - {fileID: 1703749420}
-  - {fileID: 65528766}
   - {fileID: 1368118760}
   - {fileID: 109050595}
+  - {fileID: 65528766}
+  - {fileID: 614387653}

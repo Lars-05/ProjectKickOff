@@ -51,7 +51,11 @@ public class Transparent : MonoBehaviour
 
     private void Update()
     {
-        SetClickThrough(Physics2D.OverlapPoint(Camera.main.ScreenToWorldPoint(Input.mousePosition)) == null);
+        var v3 = Input.mousePosition;
+        v3.z = 1000.0f;
+    
+        
+        SetClickThrough(Physics2D.OverlapPoint(Camera.main.ScreenToWorldPoint(v3)) == null);
     }
 
     private void SetClickThrough(bool clickThrough)
