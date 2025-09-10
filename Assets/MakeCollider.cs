@@ -1,3 +1,4 @@
+using Unity.Mathematics;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -7,8 +8,8 @@ public class MakeCollider : MonoBehaviour
 
     void Awake()
     {
-        float width = mainCamera.pixelWidth;
-        float height = mainCamera.pixelHeight;
+        float width = this.transform.position.z * 1.026f;
+        float height = this.transform.position.z * 0.576f;
 
         var edgeCollider = this.AddComponent<EdgeCollider2D>();
 
