@@ -2,7 +2,7 @@ using System;
 using TMPro;
 using UnityEngine;
 
-public class CardCreator : MonoBehaviour
+public class TaskCardCreator : MonoBehaviour
 {
     [SerializeField] private SpawnTaskcard spawnTaskcard;
     [SerializeField] private TextMeshProUGUI errorMessageField;
@@ -13,9 +13,7 @@ public class CardCreator : MonoBehaviour
         
     private bool intInputCorrect = false;
     private bool stringInputCorrect = false;
-
-   
-
+    
     public void CheckInput()
     {
       
