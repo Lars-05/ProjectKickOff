@@ -1,16 +1,17 @@
+using TMPro;
 using UnityEngine;
 
 public class TodoListTask : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    [SerializeField] private TextMeshProUGUI titleField;
+    private bool crossedOut = false;
+    public void ToggleCrossout()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        if (crossedOut) { crossedOut = false;
+            titleField.fontStyle = FontStyles.Normal;
+        } 
+        else {crossedOut = true;
+            titleField.fontStyle = FontStyles.Strikethrough;
+        }
     }
 }
