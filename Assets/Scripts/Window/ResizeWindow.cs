@@ -9,7 +9,10 @@ public class ResizeWindow : MonoBehaviour, IPointerDownHandler, IPointerEnterHan
 {
     
     
-    
+    public float xMin;
+    public float xMax;
+    public float yMin;
+    public float yMax;
     [SerializeField] private GameObject parent;
     bool holdWindow = false; 
     Vector3 prevMousePosition;
@@ -46,10 +49,15 @@ public class ResizeWindow : MonoBehaviour, IPointerDownHandler, IPointerEnterHan
             mousePosition.z = Mathf.Abs(Camera.main.transform.position.z - this.transform.position.z); 
             Camera.main.ScreenToWorldPoint(mousePosition);
             Vector3 deltaMousePosition = mousePosition - prevMousePosition;
-            float scale = (1 + -deltaMousePosition.x/ 200) + (1 + deltaMousePosition.y / 200) / 100;
 
-            parent.transform.localScale = new Vector3(scale, scale, 1);
-            
+            RectTransform rectTransform = parent.GetComponent<RectTransform>();
+            float width = rectTransform.rect.width; 
+            float height = rectTransform.rect.height;
+            rectTransform.sizeDelta = new Vector2(Mathf.Clamp(width -= (deltaMousePosition.x) / 200, xMin, xMax),
+                Mathf.Clamp(height-= (deltaMousePosition.y) / 200, yMin, yMax));
+            //Debug.Log(-deltaMousePosition.x / 200);
+
+
         }
     }
 }
