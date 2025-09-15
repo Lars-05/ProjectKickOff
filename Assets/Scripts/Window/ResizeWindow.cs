@@ -49,6 +49,7 @@ public class ResizeWindow : MonoBehaviour, IPointerDownHandler, IPointerEnterHan
             float scale = (1 + -deltaMousePosition.x/ 200) + (1 + deltaMousePosition.y / 200) / 100;
 
             parent.transform.localScale = new Vector3(scale, scale, 1);
+            
         }
     }
 }

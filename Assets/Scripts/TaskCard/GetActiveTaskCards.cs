@@ -35,9 +35,9 @@ public static class GetActiveTaskCards
                 timeRemaining = taskCardScript.timeRemaining,
                 position = new float[3]
                 {
-                    taskCardScript.transform.position.x,
-                    taskCardScript.transform.position.y,
-                    taskCardScript.transform.position.z
+                    taskCardScript.gameObject.transform.position.x,
+                    taskCardScript.gameObject.transform.position.y,
+                    taskCardScript.gameObject.transform.position.z
                 },
                 visible = taskCardScript.visible
             };

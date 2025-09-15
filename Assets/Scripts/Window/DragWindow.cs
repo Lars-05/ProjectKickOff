@@ -30,7 +30,7 @@ public class DragWindow : MonoBehaviour, IPointerDownHandler,
         {
             Vector3 mousePosition = Input.mousePosition;
             mousePosition.z = Mathf.Abs(Camera.main.transform.position.z - this.transform.position.z); 
-            this.transform.position = Camera.main.ScreenToWorldPoint(mousePosition) + offset;
+            objectToMove.transform.position = Camera.main.ScreenToWorldPoint(mousePosition) + offset;
         }
     }
 }
