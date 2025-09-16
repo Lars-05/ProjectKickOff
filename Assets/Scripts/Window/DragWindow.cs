@@ -7,7 +7,6 @@ public class DragWindow : MonoBehaviour, IPointerDownHandler,
     IPointerUpHandler
 {
     bool holdWindow = false; 
-	[SerializeField] private GameObject objectToMove;
     Vector3 offset; 
     
     public void OnPointerDown(PointerEventData eventData)
@@ -30,7 +29,7 @@ public class DragWindow : MonoBehaviour, IPointerDownHandler,
         {
             Vector3 mousePosition = Input.mousePosition;
             mousePosition.z = Mathf.Abs(Camera.main.transform.position.z - this.transform.position.z); 
-            objectToMove.transform.position = Camera.main.ScreenToWorldPoint(mousePosition) + offset;
+            this.transform.position = Camera.main.ScreenToWorldPoint(mousePosition) + offset;
         }
     }
 }

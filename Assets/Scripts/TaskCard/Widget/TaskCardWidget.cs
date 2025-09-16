@@ -8,7 +8,6 @@ public class TaskCardWidget : IUpdaterBase
 {
     [SerializeField] public TextMeshProUGUI titleField;
     [SerializeField] private Toggle visibilityToggle;
-    [HideInInspector] public string title;
     [HideInInspector] public bool visible;
     [HideInInspector] public TaskCardScript taskCardScript;
 

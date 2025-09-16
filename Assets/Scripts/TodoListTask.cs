@@ -1,10 +1,10 @@
 using TMPro;
 using UnityEngine;
 
-public class TodoListTask : MonoBehaviour
+public class TodoListTaskScript : MonoBehaviour
 {
-    [SerializeField] private TextMeshProUGUI titleField;
-    private bool crossedOut = false;
+    [HideInInspector] public TextMeshProUGUI titleField;
+    [HideInInspector] public bool crossedOut = false;
     public void ToggleCrossout()
     {
         if (crossedOut) { crossedOut = false;
@@ -13,5 +13,10 @@ public class TodoListTask : MonoBehaviour
         else {crossedOut = true;
             titleField.fontStyle = FontStyles.Strikethrough;
         }
+    }
+
+    public void DeleteTask()
+    {
+        this.gameObject.SetActive(false);
     }
 }

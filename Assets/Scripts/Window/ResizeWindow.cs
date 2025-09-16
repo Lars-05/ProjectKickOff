@@ -54,7 +54,7 @@ public class ResizeWindow : MonoBehaviour, IPointerDownHandler, IPointerEnterHan
             float width = rectTransform.rect.width; 
             float height = rectTransform.rect.height;
             rectTransform.sizeDelta = new Vector2(Mathf.Clamp(width -= (deltaMousePosition.x) / 200, xMin, xMax),
-                Mathf.Clamp(height-= (deltaMousePosition.y) / 200, yMin, yMax));
+                Mathf.Clamp(height += (deltaMousePosition.y) / 200, yMin, yMax));
             //Debug.Log(-deltaMousePosition.x / 200);
 
 
