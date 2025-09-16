@@ -86,9 +86,9 @@ GameObject:
   - component: {fileID: 2381873733791705196}
   - component: {fileID: 2531062905613332496}
   - component: {fileID: 2338373159379612181}
-  - component: {fileID: 7998786222454540528}
+  - component: {fileID: 6180423606482275699}
   m_Layer: 5
-  m_Name: TodoTask
+  m_Name: TodoTaskWidget
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -154,7 +154,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &7998786222454540528
+--- !u!114 &6180423606482275699
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -166,6 +166,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55a2d2f19c6fcce4faf1857c4214f133, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  visibilityToggle: {fileID: 257180074006371854}
+  todoListScript: {fileID: 0}
   titleField: {fileID: 1819598697349466496}
 --- !u!1 &2553979214550577521
 GameObject:
@@ -463,10 +465,10 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7998786222454540528}
-        m_TargetAssemblyTypeName: TodoListTask, Assembly-CSharp
-        m_MethodName: ToggleCrossout
-        m_Mode: 1
+      - m_Target: {fileID: 6180423606482275699}
+        m_TargetAssemblyTypeName: TodoListWidget, Assembly-CSharp
+        m_MethodName: ToggleVisibility
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -596,9 +598,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7998786222454540528}
-        m_TargetAssemblyTypeName: TodoListTaskScript, Assembly-CSharp
-        m_MethodName: DeleteTask
+      - m_Target: {fileID: 6180423606482275699}
+        m_TargetAssemblyTypeName: TodoListWidget, Assembly-CSharp
+        m_MethodName: DeleteTodoList
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

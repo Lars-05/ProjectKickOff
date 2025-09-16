@@ -2,12 +2,19 @@ using System;
 using TMPro;
 using UnityEngine;
 
-public class TaskCardCreator : MonoBehaviour
+public class TaskCardSpawner : MonoBehaviour
 {
-    [SerializeField] private SpawnTaskcard spawnTaskcard;
+    [SerializeField] private GameObject taskCardWidgetPrefab;
+    [SerializeField] private GameObject taskCardPrefab;
+    [SerializeField] private GameObject objectToDisable;
+    
+    [SerializeField] private GameObject objectToSpawnTaskCardUnder;
+    [SerializeField] private GameObject objectToSpawnTaskCardWidgetUnder;
+    
     [SerializeField] private TextMeshProUGUI errorMessageField;
     [SerializeField] private TextMeshProUGUI cardTitleField;
     [SerializeField] private TextMeshProUGUI cardDescriptionField;
+    
     [SerializeField] private TMP_InputField cardTimeHoursField;
     [SerializeField] private TMP_InputField cardTimeMinutesField;
         
@@ -16,7 +23,6 @@ public class TaskCardCreator : MonoBehaviour
     
     public void CheckInput()
     {
-      
         int.TryParse(cardTimeHoursField.text.Trim(), out int hours);
         int.TryParse(cardTimeMinutesField.text.Trim(), out int minutes);
         int seconds = hours * 3600 + minutes * 60;
@@ -30,7 +36,18 @@ public class TaskCardCreator : MonoBehaviour
         if (intInputCorrect && stringInputCorrect)
         {
             SetErrorMessage(string.Empty);
-            spawnTaskcard.SpawnCard(cardTitleField.text, cardDescriptionField.text, seconds, spawnTaskcard.transform.position);
+            GameObject taskcard = Instantiate(taskCardPrefab, this.transform.position, Quaternion.identity,  objectToSpawnTaskCardUnder.transform);
+            TaskCardScript taskcardScript = taskcard.GetComponent<TaskCardScript>();
+            taskcardScript.ConfigureCard(cardTitleField.text, cardDescriptionField.text, seconds);
+            
+            GameObject newTaskCardWidgetPrefab = Instantiate(taskCardWidgetPrefab, this.transform.position, Quaternion.identity, objectToSpawnTaskCardWidgetUnder.transform);
+            TaskCardWidget newTaskCardWidgetPrefabScript = newTaskCardWidgetPrefab.GetComponent<TaskCardWidget>();
+            newTaskCardWidgetPrefabScript.taskCardScript = taskcardScript;
+        
+       
+      
+            
+            MakeInvisible();
         }
         else if(!intInputCorrect)
         {
@@ -66,4 +83,16 @@ public class TaskCardCreator : MonoBehaviour
     {
         errorMessageField.text = errorMessage;
     }
+    
+    public void MakeVisible()
+    {
+        objectToDisable.SetActive(true);
+    }
+    
+    public void MakeInvisible()
+    {
+        objectToDisable.SetActive(false);
+    }
+    
+    
 }

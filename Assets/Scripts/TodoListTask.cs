@@ -1,22 +1,36 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class TodoListTaskScript : MonoBehaviour
+public class TodoListWidget : IUpdaterBase
 {
-    [HideInInspector] public TextMeshProUGUI titleField;
-    [HideInInspector] public bool crossedOut = false;
-    public void ToggleCrossout()
+    private bool visible;
+    [SerializeField] private Toggle visibilityToggle;
+    [HideInInspector] public TodoListScript todoListScript;
+    public TextMeshProUGUI titleField;
+ 
+    
+    public void ToggleVisibility(bool on)
     {
-        if (crossedOut) { crossedOut = false;
-            titleField.fontStyle = FontStyles.Normal;
-        } 
-        else {crossedOut = true;
-            titleField.fontStyle = FontStyles.Strikethrough;
-        }
+        if (on) { todoListScript.MakeVisible(); }
+        else { todoListScript.MakeInvisible(); }
     }
-
-    public void DeleteTask()
+    
+    public void Configure(string title, bool isVisible)
     {
-        this.gameObject.SetActive(false);
+        visible = isVisible;
+        titleField.text = title;
+    }
+    
+    public override void SharedUpdate()
+    {
+        visible = todoListScript.visible;
+        visibilityToggle.isOn = visible;
+    }
+    
+    public void DeleteTodoList()
+    {
+        Destroy(todoListScript.gameObject);
+        Destroy(this.gameObject);
     }
 }

@@ -58,16 +58,17 @@ public static class GetActiveTaskCards
             };
         }
 
-        TodoTaskListScript[] todoTaskSpawners = GameObject.FindObjectsByType<TodoTaskListScript>(FindObjectsInactive.Exclude, FindObjectsSortMode.None);
+        TodoListScript[] todoTaskSpawners = GameObject.FindObjectsByType<TodoListScript>(FindObjectsInactive.Exclude, FindObjectsSortMode.None);
         TodoCardData[] saveData2 = new TodoCardData[todoTaskSpawners.Length];
         for (int i = 0; i < todoTaskSpawners.Length; i++)
         {
-         
+         /*
             for (int j = 0; j < todoTaskSpawners[i].todoListTaskScripts.Count; j++)
             {
                 titles.Add(todoTaskSpawners[i].todoListTaskScripts[j].titleField.text);
-                taskStatus.Add(todoTaskSpawners[i].todoListTaskScripts[j].crossedOut); 
+                //taskStatus.Add(todoTaskSpawners[i].todoListTaskScripts[j].crossedOut); 
             }
+            */
 
             saveData2[i] = new TodoCardData
             {

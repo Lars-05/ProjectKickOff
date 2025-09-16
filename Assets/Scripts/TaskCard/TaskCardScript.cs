@@ -19,7 +19,7 @@ public class TaskCardScript : MonoBehaviour
     [SerializeField] private TextMeshProUGUI cardTimeField;
     [SerializeField] private TextMeshProUGUI startStopField;
     
-    public void SetCardText(string title, string description, float seconds)
+    public void ConfigureCard(string title, string description, float seconds)
     {
         cardTitleField.text = title;
         cardDescriptionField.text = description;

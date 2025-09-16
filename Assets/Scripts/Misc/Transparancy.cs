@@ -2,10 +2,6 @@ using System;
 using System.Runtime.InteropServices;
 using UnityEngine;
 
-using System;
-using System.Runtime.InteropServices;
-using UnityEngine;
-
 public class Transparent : MonoBehaviour
 {
     [DllImport("user32.dll")] 
