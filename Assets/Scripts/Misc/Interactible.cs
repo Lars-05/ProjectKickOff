@@ -19,7 +19,6 @@ public class Interactible : MonoBehaviour, IPointerDownHandler, IPointerUpHandle
 
     public void OnPointerDown(PointerEventData eventData)
     {
-        Debug.Log("OnPointerDown");
         if (window.activeSelf == false)
         {
             window.SetActive(true);
