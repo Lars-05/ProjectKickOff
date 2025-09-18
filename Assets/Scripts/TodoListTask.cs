@@ -8,14 +8,12 @@ public class TodoListWidget : IUpdaterBase
     [SerializeField] private Toggle visibilityToggle;
     [HideInInspector] public TodoListScript todoListScript;
     public TextMeshProUGUI titleField;
- 
     
     public void ToggleVisibility(bool on)
     {
         if (on) { todoListScript.MakeVisible(); }
         else { todoListScript.MakeInvisible(); }
     }
-    
     public void Configure(string title, bool isVisible)
     {
         visible = isVisible;

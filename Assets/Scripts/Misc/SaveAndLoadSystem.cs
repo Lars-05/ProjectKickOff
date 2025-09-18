@@ -6,7 +6,8 @@ using System.Runtime.Serialization.Formatters.Binary;
 
 public static class SaveAndLoadSystem
 {
-    public static void SaveData(TaskCardData[] taskCardData)
+    
+    public static void SaveData(SaveData taskCardData)
     {
         BinaryFormatter formatter = new BinaryFormatter();
         string path = Application.persistentDataPath + "/userData.grd";
@@ -15,16 +16,16 @@ public static class SaveAndLoadSystem
         stream.Close();
     }
 
-    public static TaskCardData[] LoadData()
+    public static SaveData LoadData()
     {
         string path = Application.persistentDataPath + "/userData.grd";
         if (File.Exists(path))
         {
             BinaryFormatter formatter = new BinaryFormatter();
             FileStream stream = new FileStream(path, FileMode.Open);
-            TaskCardData[] taskCardData = formatter.Deserialize(stream) as TaskCardData[];
+            SaveData saveData = formatter.Deserialize(stream) as SaveData;
             stream.Close();
-            return taskCardData; 
+            return saveData; 
         }
         else
         {

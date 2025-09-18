@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class TodoListScript : MonoBehaviour
@@ -8,7 +9,8 @@ public class TodoListScript : MonoBehaviour
     [SerializeField] private GameObject todoTaskPrefab;
     [SerializeField] private GameObject objectToSpawnUnder;
     [SerializeField] private GameObject objectToDisable;
-    //[HideInInspector] public List<TodoListTaskScript> todoListTaskScripts = new List<TodoListTaskScript>();
+    public List<TodoListTask> todoListTaskScripts = new List<TodoListTask>();
+    
     
     public TextMeshProUGUI todoListTitle;
     [HideInInspector] public bool visible = true;
@@ -16,11 +18,26 @@ public class TodoListScript : MonoBehaviour
     public void ConfigureTodoList(string title)
     {
         todoListTitle.text = title;
+        if (visible) MakeVisible();
+        else MakeInvisible();
     }
     
-    public void SpawnTodoTask()
+    public void SpawnNewTodoTask()
     { 
         GameObject newTodoTaskPrefab = Instantiate(todoTaskPrefab, this.transform.position, Quaternion.identity, objectToSpawnUnder.transform);
+        todoListTaskScripts.Add(newTodoTaskPrefab.GetComponent<TodoListTask>());
+    }
+    
+    public void SpawnTodoTask(string title, bool completed)
+    { 
+     
+        GameObject newTodoTaskPrefab = Instantiate(todoTaskPrefab, this.transform.position, Quaternion.identity, objectToSpawnUnder.transform);
+        TodoListTask newTodoTaskPrefabScript = newTodoTaskPrefab.GetComponent<TodoListTask>();
+        newTodoTaskPrefabScript.todoListScript = this;
+        todoListTaskScripts.Add(newTodoTaskPrefabScript);
+        
+        newTodoTaskPrefabScript.Configure(completed, title);
+        
     }
     
     public void MakeVisible()

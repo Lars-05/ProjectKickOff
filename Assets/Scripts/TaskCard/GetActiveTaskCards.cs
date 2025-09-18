@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using NUnit.Framework;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 
 
@@ -15,7 +16,14 @@ public class TaskCardData
     public float[] position;
     public bool visible; 
 }
-
+[Serializable]
+public class CurrencyData
+{
+    public int coins;
+    public int wateringCans;
+    public int seedpackets;
+}
+[Serializable]
 public class TodoCardData
 {
     // TodoList
@@ -26,24 +34,29 @@ public class TodoCardData
     public string[] todoCardTitles;
     public bool[] taskStatus;
 }
-
-public static class GetActiveTaskCards
+[Serializable]
+public class SaveData
 {
-    static List<string> titles = new List<string>();
-    static List<bool> taskStatus = new List<bool>();
-    public static void GetTaskCardData()
+    public TodoCardData[] todoCardData;
+    public TaskCardData[] taskCardData;
+}
+
+public static class GetUserData
+{
+    
+    public static void GetUserSaveData()
     {
         GameObject taskCardHolder = GameObject.Find("TaskCards");
         int childCount = taskCardHolder.transform.childCount;
      
-        TaskCardData[] saveData = new TaskCardData[childCount];
+        TaskCardData[] taskCardSaveData = new TaskCardData[childCount];
        
 
         for (int i = 0; i < childCount; i++)
         {
             TaskCardScript taskCardScript = taskCardHolder.transform.GetChild(i).GetComponent<TaskCardScript>();
         
-            saveData[i] = new TaskCardData
+            taskCardSaveData[i] = new TaskCardData
             {
                 title = taskCardScript.cardTitle,
                 description = taskCardScript.cardDescription,
@@ -58,27 +71,34 @@ public static class GetActiveTaskCards
             };
         }
 
-        TodoListScript[] todoTaskSpawners = GameObject.FindObjectsByType<TodoListScript>(FindObjectsInactive.Exclude, FindObjectsSortMode.None);
-        TodoCardData[] saveData2 = new TodoCardData[todoTaskSpawners.Length];
-        for (int i = 0; i < todoTaskSpawners.Length; i++)
+        TodoListScript[] todoLists = GameObject.FindObjectsByType<TodoListScript>(FindObjectsInactive.Exclude, FindObjectsSortMode.None);
+        TodoCardData[] todoListSaveData = new TodoCardData[todoLists.Length];
+        
+        for (int i = 0; i < todoLists.Length; i++)
         {
-         /*
-            for (int j = 0; j < todoTaskSpawners[i].todoListTaskScripts.Count; j++)
+            List<string> titles = new List<string>();
+            List<bool> taskStatus = new List<bool>();
+            
+            for (int j = 0; j < todoLists[i].todoListTaskScripts.Count; j++)
             {
-                titles.Add(todoTaskSpawners[i].todoListTaskScripts[j].titleField.text);
-                //taskStatus.Add(todoTaskSpawners[i].todoListTaskScripts[j].crossedOut); 
+                taskStatus.Add(todoLists[i].todoListTaskScripts[j].crossedOut);
+                titles.Add(todoLists[i].todoListTaskScripts[j].titleField.text); 
+                Debug.Log(todoLists[i].todoListTaskScripts[j].crossedOut);
             }
-            */
-
-            saveData2[i] = new TodoCardData
+            
+            todoListSaveData[i] = new TodoCardData
             {
                 todoCardTitles = titles.ToArray(),
                 taskStatus = taskStatus.ToArray(),
-                cardTitle = todoTaskSpawners[i].todoListTitle.text,
-                visible =  todoTaskSpawners[i].visible
+                cardTitle = todoLists[i].todoListTitle.text,
+                visible =  todoLists[i].visible
             };
         }
-        
+
+        SaveData saveData = new SaveData();
+        saveData.todoCardData = todoListSaveData;
+        saveData.taskCardData = taskCardSaveData;
+
         SaveAndLoadSystem.SaveData(saveData);
     }
 }

@@ -122,8 +122,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1609752297983103734}
-        m_TargetAssemblyTypeName: TodoTaskSpawner, Assembly-CSharp
-        m_MethodName: SpawnTodoTask
+        m_TargetAssemblyTypeName: TodoListScript, Assembly-CSharp
+        m_MethodName: SpawnNewTodoTask
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -221,7 +221,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10fa0337489a883468f49add727e8141, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  taskCardScript: {fileID: 0}
+  MakeWindowInvisible:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1609752297983103734}
+        m_TargetAssemblyTypeName: TodoListScript, Assembly-CSharp
+        m_MethodName: MakeInvisible
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1042096447005677334
 GameObject:
   m_ObjectHideFlags: 0
@@ -608,10 +622,10 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
+  m_fontSize: 44.75
   m_fontSizeBase: 36
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
@@ -1019,6 +1033,7 @@ MonoBehaviour:
   todoTaskPrefab: {fileID: 1240486912463141403, guid: 73cab113f23206544a04f1e908600586, type: 3}
   objectToSpawnUnder: {fileID: 5926336017367778211}
   objectToDisable: {fileID: 7465398587314576830}
+  todoListTaskScripts: []
   todoListTitle: {fileID: 173399299581107648}
   visible: 1
 --- !u!1 &7465398587314576830
