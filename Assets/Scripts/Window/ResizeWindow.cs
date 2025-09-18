@@ -19,11 +19,13 @@ public class ResizeWindow : MonoBehaviour, IPointerDownHandler, IPointerEnterHan
     
     public void OnPointerDown(PointerEventData eventData)
     {
+        /*
         holdWindow = true;
 
         prevMousePosition = Input.mousePosition;
         prevMousePosition.z = Mathf.Abs(Camera.main.transform.position.z - this.transform.position.z);
         Camera.main.ScreenToWorldPoint(prevMousePosition);
+        */
     }
 
     public void OnPointerUp(PointerEventData eventData)

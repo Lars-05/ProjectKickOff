@@ -1,8 +1,10 @@
 using System;
+using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
-public class Transparent : MonoBehaviour
+public class Transparent : IUpdaterBase
 {
     [DllImport("user32.dll")] 
     static extern IntPtr GetActiveWindow();
@@ -45,17 +47,30 @@ public class Transparent : MonoBehaviour
         SetWindowPos(hwnd, HWND_TOPMOST, 0, 0, 0, 0, 0);
     }
 
-    private void Update()
+    public override void SharedUpdate()
     {
         var v3 = Input.mousePosition;
         v3.z = Mathf.Abs(Camera.main.transform.position.z - this.transform.position.z); 
         
         bool hit2D = Physics2D.OverlapPoint(Camera.main.ScreenToWorldPoint(v3)) != null;
-        bool hit3D = (Physics.Raycast(Camera.main.ScreenPointToRay(v3)));
+        bool hit3D = Physics.Raycast(Camera.main.ScreenPointToRay(v3));
+        bool hitUI = IsPointerOverUI();
 
-        SetClickThrough(!(hit2D || hit3D));
+        SetClickThrough(!(hit2D || hit3D || hitUI));
     }
 
+    private bool IsPointerOverUI()
+    {
+        PointerEventData pointerData = new PointerEventData(EventSystem.current)
+        {
+            position = Input.mousePosition
+        };
+        List<RaycastResult> results = new List<RaycastResult>();
+        EventSystem.current.RaycastAll(pointerData, results);
+        return results.Count > 0;
+    }
+    
+    
     private void SetClickThrough(bool clickThrough)
     {
         if (clickThrough)
