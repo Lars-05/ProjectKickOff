@@ -93,7 +93,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   titleField: {fileID: 2699667791413546562}
   visibilityToggle: {fileID: 1259089241139809533}
-  title: 
   visible: 1
   taskCardScript: {fileID: 0}
 --- !u!1 &2798627820107570982
@@ -130,8 +129,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -90, y: 0}
-  m_SizeDelta: {x: 96.5916, y: 25}
+  m_AnchoredPosition: {x: -50.31642, y: 0}
+  m_SizeDelta: {x: 190, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7090521336433263699
 CanvasRenderer:
@@ -188,12 +187,12 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 22.35
+  m_fontSize: 32
   m_fontSizeBase: 20
   m_fontWeight: 400
   m_enableAutoSizing: 1
-  m_fontSizeMin: 18
-  m_fontSizeMax: 72
+  m_fontSizeMin: 10
+  m_fontSizeMax: 32
   m_fontStyle: 0
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256

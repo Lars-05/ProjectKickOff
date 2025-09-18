@@ -4,23 +4,37 @@ using UnityEngine.UI;
 
 public class TodoListTask : MonoBehaviour
 {
-    [SerializeField] private TextMeshProUGUI titleField;
-    [SerializeField] private Toggle visibilityToggle;
-    [HideInInspector] public bool crossedOut = false;
-        
-        public void ToggleCrossout()
-        {
-            if (crossedOut) { crossedOut = false;
-                titleField.fontStyle = FontStyles.Normal;
-            } 
-            else {crossedOut = true;
-                titleField.fontStyle = FontStyles.Strikethrough;
-            }
+    public TextMeshProUGUI titleField;
+    [SerializeField] private Toggle crossedOutToggle;
+    [HideInInspector] public bool crossedOut;
+    [HideInInspector] public TodoListScript todoListScript;
+
+    public void Configure(bool completed, string title)
+    {
+        Debug.Log(title);
+        crossedOutToggle.isOn = completed;
+        titleField.text = title;
+    }
+    public void ToggleCrossout(bool completed)
+    {
+        if(completed){titleField.fontStyle = FontStyles.Strikethrough;
+            crossedOut = true;
         }
-        
-        public void DeleteTask()
-        {
-            Destroy(this.gameObject);
+        else {titleField.fontStyle = FontStyles.Normal;
+            crossedOut = false;
         }
+    }
+    
+    public void DeleteTask()
+    {
+        todoListScript.todoListTaskScripts.Remove(this);
+        Destroy(this.gameObject);
+      
+    }
+
+    public void SaveTodoTaskName(string taskName)
+    {
+        titleField.text = taskName;
+    }
         
 }

@@ -20,7 +20,35 @@ public class TaskCardSpawner : MonoBehaviour
         
     private bool intInputCorrect = false;
     private bool stringInputCorrect = false;
-    
+
+
+    public void Awake()
+    {
+        SaveData saveData = SaveAndLoadSystem.LoadData();
+        if (saveData == null || saveData.taskCardData == null)
+        {
+            return;
+        }
+        
+        TaskCardData[] taskCardSavedData = saveData.taskCardData;
+        
+        foreach (TaskCardData taskCardData in taskCardSavedData)
+        {
+           
+            GameObject taskcard = Instantiate(taskCardPrefab, this.transform.position, Quaternion.identity,  objectToSpawnTaskCardUnder.transform);
+            TaskCardScript taskcardScript = taskcard.GetComponent<TaskCardScript>();
+            taskcardScript.ConfigureCard(taskCardData.title, taskCardData.description, taskCardData.timeRemaining);
+            taskcardScript.visible = taskCardData.visible;
+            
+            
+            GameObject newTaskCardWidgetPrefab = Instantiate(taskCardWidgetPrefab, this.transform.position, Quaternion.identity, objectToSpawnTaskCardWidgetUnder.transform);
+            TaskCardWidget newTaskCardWidgetPrefabScript = newTaskCardWidgetPrefab.GetComponent<TaskCardWidget>();
+            newTaskCardWidgetPrefabScript.taskCardScript = taskcardScript;
+            newTaskCardWidgetPrefabScript.titleField.text = taskCardData.title;
+            
+        }
+    }
+
     public void CheckInput()
     {
         int.TryParse(cardTimeHoursField.text.Trim(), out int hours);
@@ -43,10 +71,7 @@ public class TaskCardSpawner : MonoBehaviour
             GameObject newTaskCardWidgetPrefab = Instantiate(taskCardWidgetPrefab, this.transform.position, Quaternion.identity, objectToSpawnTaskCardWidgetUnder.transform);
             TaskCardWidget newTaskCardWidgetPrefabScript = newTaskCardWidgetPrefab.GetComponent<TaskCardWidget>();
             newTaskCardWidgetPrefabScript.taskCardScript = taskcardScript;
-        
-       
-      
-            
+            newTaskCardWidgetPrefabScript.titleField.text = cardTitleField.text;
             MakeInvisible();
         }
         else if(!intInputCorrect)
