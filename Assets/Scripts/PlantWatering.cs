@@ -15,19 +15,22 @@ public class PlantWatering : IUpdaterBase
     [SerializeField] private Sprite[] plants;
     [SerializeField] private float amountOfWateringTimeOff;
     [SerializeField] private Image plantImage;
+    [SerializeField] private Button harvestSaveButton;
+    [SerializeField] private GameObject indicator;
+    [SerializeField] private TMP_Dropdown dropdown;
     private bool stopCountdown = true;
+    private bool planted = false;
+    private string rarity; 
+    private string pack;
     private Dictionary<string, int> watering = new Dictionary<string, int>()
     {
-        {"Spring", 0},
-        {"Summer", 1},
-        {"Autumn", 2},
-        {"Winter", 3},
-        {"Fruit", 4},
-        {"Basic", 5}
+        {"Spring", 1},
+        {"Summer", 2},
+        {"Autumn", 3},
+        {"Winter", 4},
+        {"Fruit", 5},
+        {"Basic", 6}
     };
-
-    private string pack;
-    
     // PlaceHolder
     [SerializeField] private float amountOfWateringCans;
     
@@ -42,13 +45,31 @@ public class PlantWatering : IUpdaterBase
 
     public void PlantingPlant()
     {
-        timeRemaining = 60;
-        stopCountdown = false;
-        var dropdown = gameObject.GetComponent<TMP_Dropdown>();
-        pack = dropdown.options[dropdown.value].text;
-        
-        Debug.Log(pack);
-        StartCoroutine(Growing());
+        if (!planted)
+        {
+            planted = true;
+            int roll = Random.Range(0, 20);
+            if (roll < 16)
+            {
+                rarity = "Common";
+                timeRemaining = 60;
+            }
+            else if (roll < 19)
+            {
+                rarity = "Rare";
+                timeRemaining = 120;
+            }
+            else
+            {
+                rarity = "Epic";
+                timeRemaining = 240;
+            }
+
+            stopCountdown = false;
+            pack = dropdown.options[dropdown.value].text;
+            Debug.Log(pack);
+            StartCoroutine(Growing());
+        }
     }
     
     public void WateringPlant()
@@ -70,24 +91,26 @@ public class PlantWatering : IUpdaterBase
     private void Grow()
     {
         int packValue = watering[pack];
-        int roll = Random.Range(0, 20);
-        Debug.Log(roll);
-        if (roll < 16)
+        
+        if (rarity == "Common")
         {
             Debug.Log("Common");
             int index = Random.Range(0, 2);
             plantImage.sprite = plants[index * packValue];
         }
-        else if (roll < 19)
+        else if (rarity == "Rare")
         {
             Debug.Log("Rare");
             plantImage.sprite = plants[2 * packValue];
         }
-        else
+        else if (rarity == "Epic")
         {
             Debug.Log("Epic");
             plantImage.sprite = plants[3 * packValue];
         }
+
+        harvestSaveButton.interactable = true;
+        indicator.SetActive(true);
     }
     private void CountDown()
     {
@@ -104,5 +127,13 @@ public class PlantWatering : IUpdaterBase
             cardTimeField.text = "00:00";
         }
     }
+
     
+    public void Harvest()
+    {
+        planted = false;
+        plantImage.sprite = null;
+        harvestSaveButton.interactable = false;
+        indicator.SetActive(false);
+    }
 }
