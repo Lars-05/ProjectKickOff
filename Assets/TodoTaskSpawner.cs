@@ -4,12 +4,13 @@ using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class TodoListScript : MonoBehaviour
+public class TodoListScript : IUpdaterBase
 {
     [SerializeField] private GameObject todoTaskPrefab;
     [SerializeField] private GameObject objectToSpawnUnder;
     [SerializeField] private GameObject objectToDisable;
     public List<TodoListTask> todoListTaskScripts = new List<TodoListTask>();
+    [SerializeField] private TextMeshProUGUI todoListTaskTitle; 
     
     
     public TextMeshProUGUI todoListTitle;
@@ -21,11 +22,22 @@ public class TodoListScript : MonoBehaviour
         if (visible) MakeVisible();
         else MakeInvisible();
     }
-    
+
+    public override void SharedUpdate()
+    {
+        foreach (var task in todoListTaskScripts)
+        {
+            task.crossedOut = true;
+        }
+    }
+
     public void SpawnNewTodoTask()
     { 
         GameObject newTodoTaskPrefab = Instantiate(todoTaskPrefab, this.transform.position, Quaternion.identity, objectToSpawnUnder.transform);
-        todoListTaskScripts.Add(newTodoTaskPrefab.GetComponent<TodoListTask>());
+        TodoListTask newTodoTaskPrefabScript = newTodoTaskPrefab.GetComponent<TodoListTask>();
+        todoListTaskScripts.Add(newTodoTaskPrefabScript);
+        newTodoTaskPrefabScript.todoListScript = this;
+        newTodoTaskPrefabScript.Configure(false, todoListTaskTitle.text);
     }
     
     public void SpawnTodoTask(string title, bool completed)

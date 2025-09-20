@@ -14,7 +14,9 @@ public class TaskCardData
     public string description;
     public float timeRemaining;
     public float[] position;
+    public float multiplier;
     public bool visible; 
+
 }
 [Serializable]
 public class CurrencyData
@@ -61,6 +63,7 @@ public static class GetUserData
                 title = taskCardScript.cardTitle,
                 description = taskCardScript.cardDescription,
                 timeRemaining = taskCardScript.timeRemaining,
+                multiplier = taskCardScript.multiplier,
                 position = new float[3]
                 {
                     taskCardScript.gameObject.transform.position.x,

@@ -5,14 +5,18 @@ using Random = UnityEngine.Random;
 
 public class BuddyMovement : IUpdaterBase
 {
+    
+    [SerializeField] private Animator animator;
     [SerializeField] private SpriteRenderer buddySpriteRenderer;
     [SerializeField] private NavMeshAgent agent;
     [SerializeField] private movement movement;
     private Vector3 pointOnNavMesh = Vector3.zero;
+    private float lastXCoord = 0;
     float timePassed = 0;
 
     private void Awake()
     {
+        lastXCoord = this.transform.position.x;
         GetPointOnNavMesh();
     }
 
@@ -25,17 +29,21 @@ public class BuddyMovement : IUpdaterBase
 
     public override void SharedUpdate()
     {
-        if (this.transform.position.x < pointOnNavMesh.x)
+        float currentXCoord = this.transform.position.x;
+        if (currentXCoord > lastXCoord)
         {
             buddySpriteRenderer.flipX = true;
         }
-        else
+        else if (currentXCoord < lastXCoord)
         {
             buddySpriteRenderer.flipX = false;
         }
-        Debug.unityLogger.Log(Vector3.Distance(agent.transform.position, pointOnNavMesh));
+        
+        lastXCoord = currentXCoord;
+        
         if (Vector3.Distance(agent.transform.position, pointOnNavMesh) < 50f)
         {
+            animator.SetBool("isMoving", false);
             int randNumber = Random.Range(5, 10);
             timePassed += Time.deltaTime;
             if (timePassed > randNumber)
@@ -45,6 +53,7 @@ public class BuddyMovement : IUpdaterBase
         }
         else
         {
+            animator.SetBool("isMoving", true);
             timePassed = 0;
         }
     }

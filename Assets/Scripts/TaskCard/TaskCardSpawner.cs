@@ -1,5 +1,6 @@
 using System;
 using TMPro;
+using Unity.Mathematics;
 using UnityEngine;
 
 public class TaskCardSpawner : MonoBehaviour
@@ -37,7 +38,8 @@ public class TaskCardSpawner : MonoBehaviour
            
             GameObject taskcard = Instantiate(taskCardPrefab, this.transform.position, Quaternion.identity,  objectToSpawnTaskCardUnder.transform);
             TaskCardScript taskcardScript = taskcard.GetComponent<TaskCardScript>();
-            taskcardScript.ConfigureCard(taskCardData.title, taskCardData.description, taskCardData.timeRemaining);
+            
+            taskcardScript.ConfigureCard(taskCardData.title, taskCardData.description, taskCardData.timeRemaining, taskCardData.multiplier);
             taskcardScript.visible = taskCardData.visible;
             
             
@@ -66,7 +68,7 @@ public class TaskCardSpawner : MonoBehaviour
             SetErrorMessage(string.Empty);
             GameObject taskcard = Instantiate(taskCardPrefab, this.transform.position, Quaternion.identity,  objectToSpawnTaskCardUnder.transform);
             TaskCardScript taskcardScript = taskcard.GetComponent<TaskCardScript>();
-            taskcardScript.ConfigureCard(cardTitleField.text, cardDescriptionField.text, seconds);
+            taskcardScript.ConfigureCard(cardTitleField.text, cardDescriptionField.text, seconds, MathF.Floor(seconds / 360f));
             
             GameObject newTaskCardWidgetPrefab = Instantiate(taskCardWidgetPrefab, this.transform.position, Quaternion.identity, objectToSpawnTaskCardWidgetUnder.transform);
             TaskCardWidget newTaskCardWidgetPrefabScript = newTaskCardWidgetPrefab.GetComponent<TaskCardWidget>();

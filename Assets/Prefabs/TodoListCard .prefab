@@ -34,9 +34,9 @@ RectTransform:
   - {fileID: 3552822531922241965}
   m_Father: {fileID: 7069436557327047779}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 265.2, y: -15}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 265.59, y: 15}
   m_SizeDelta: {x: 50.095398, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3760880270555025143
@@ -1519,7 +1519,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 1
+  m_PresetInfoIsWorld: 0
 --- !u!114 &3156600370811569950
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1553,6 +1553,7 @@ MonoBehaviour:
   objectToSpawnUnder: {fileID: 5926336017367778211}
   objectToDisable: {fileID: 7465398587314576830}
   todoListTaskScripts: []
+  todoListTaskTitle: {fileID: 1449177670370597158}
   todoListTitle: {fileID: 173399299581107648}
   visible: 1
 --- !u!1 &7465398587314576830
@@ -1683,8 +1684,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.10030365, y: -316.5794}
-  m_SizeDelta: {x: 400.1, y: 540.8413}
+  m_AnchoredPosition: {x: 0.10030365, y: -300.00684}
+  m_SizeDelta: {x: 400.1, y: 573.99}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5691977460071160983
 CanvasRenderer:
