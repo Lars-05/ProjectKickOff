@@ -2,7 +2,7 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!78 &1
 TagManager:
-  serializedVersion: 2
+  serializedVersion: 3
   tags: []
   layers:
   - Default
@@ -38,8 +38,20 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Background
+    uniqueID: 3826703141
+    locked: 0
+  - name: Box
+    uniqueID: 2722031837
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Buddies
+    uniqueID: 2489558587
+    locked: 0
+  - name: Foreground
+    uniqueID: 105192697
     locked: 0
   m_RenderingLayers:
   - Default
@@ -50,27 +62,3 @@ TagManager:
   - Light Layer 5
   - Light Layer 6
   - Light Layer 7
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
