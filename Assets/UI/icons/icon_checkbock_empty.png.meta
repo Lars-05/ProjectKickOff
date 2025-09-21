@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -108,34 +108,12 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: icon_checkbock_empty_0
-      rect:
-        serializedVersion: 2
-        x: 45
-        y: 89
-        width: 287
-        height: 287
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 95, y: 67, z: 63, w: 84}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6b318f31682328a428d99fff59680b07
-      internalID: -360418937
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
+    sprites: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 656d391e40527564887a1a958910fb9c
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -144,8 +122,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      icon_checkbock_empty_0: -360418937
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

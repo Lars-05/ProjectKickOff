@@ -27,7 +27,6 @@ public class TodoListTask : MonoBehaviour
     
     public void DeleteTask()
     {
-        Debug.Log("GUH");
         todoListScript.todoListTaskScripts.Remove(this);
         Destroy(this.gameObject);
       
