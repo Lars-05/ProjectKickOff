@@ -70,7 +70,7 @@ public class TaskCardSpawner : MonoBehaviour
             TaskCardScript taskcardScript = taskcard.GetComponent<TaskCardScript>();
             taskcardScript.ConfigureCard(cardTitleField.text, cardDescriptionField.text, seconds, MathF.Floor(seconds / 360f));
             
-            GameObject newTaskCardWidgetPrefab = Instantiate(taskCardWidgetPrefab, this.transform.position, Quaternion.identity, objectToSpawnTaskCardWidgetUnder.transform);
+            GameObject newTaskCardWidgetPrefab = Instantiate(taskCardWidgetPrefab, objectToSpawnTaskCardWidgetUnder.transform.position, Quaternion.identity, objectToSpawnTaskCardWidgetUnder.transform);
             TaskCardWidget newTaskCardWidgetPrefabScript = newTaskCardWidgetPrefab.GetComponent<TaskCardWidget>();
             newTaskCardWidgetPrefabScript.taskCardScript = taskcardScript;
             newTaskCardWidgetPrefabScript.titleField.text = cardTitleField.text;
