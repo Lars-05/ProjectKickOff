@@ -188,7 +188,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 400.7698, y: 453.0627}
+  m_SizeDelta: {x: 400, y: 4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &1163504457477752879
 Canvas:
@@ -266,10 +266,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeRemaining: 0
-  buddyID: 0
   totalTime: 0
+  buddyID: 0
+  isDone: 0
+  plantedBuddy: 0
+  needsWatering: 0
+  amountOfWateringTimeOff: 10
   progressSlider: {fileID: 3704284351668714834}
   growingStatus: {fileID: 8958729993858208294}
+  errorMessageField: {fileID: 0}
   cardTimeField: {fileID: 241980660946971498}
   buddies:
   - {fileID: 21300000, guid: 888475435b738e64c916e852a9846ae2, type: 3}
@@ -296,19 +301,16 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 4f5511fcf1d99bd46a350de00e10c448, type: 3}
   - {fileID: 21300000, guid: 824f2244bd4aa4840b52619dc06c0cdb, type: 3}
   - {fileID: 21300000, guid: a504e07732e72e541b3b9e49ba799df5, type: 3}
-  amountOfWateringTimeOff: 10
   plantImage: {fileID: 0}
+  buddyImage: {fileID: 1192668380852123051}
   harvestButtonGO: {fileID: 7479054357201012979}
   waterButtonGO: {fileID: 1582551893722154344}
-  buddyImage: {fileID: 1192668380852123051}
   prePlantUI: {fileID: 4244866280367643286}
   proPlantUI: {fileID: 7897237110777749329}
   rewardUI: {fileID: 5371420617539802477}
   indicator: {fileID: 0}
+  objectToDisable: {fileID: 0}
   dropdown: {fileID: 323132672110978978}
-  isDone: 0
-  plantedBuddy: 0
-  needsWatering: 0
 --- !u!1 &1382802302291093878
 GameObject:
   m_ObjectHideFlags: 0
@@ -815,7 +817,7 @@ Transform:
   m_GameObject: {fileID: 2291109553159302178}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 553, y: 71.85393, z: 809}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
