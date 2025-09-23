@@ -1410,7 +1410,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   errorMessageField: {fileID: 1597528041460096744}
-  cardTitleField: {fileID: 6536221681428510458}
+  cardTitleField: {fileID: 217239273857130598}
   objectToSpawnTodoListUnder: {fileID: 0}
   objectToSpawnWidgetUnder: {fileID: 0}
   todoTaskPrefab: {fileID: 7425698471541298860, guid: 84ae7939e416aa54b817ce1d8abd4e70, type: 3}
