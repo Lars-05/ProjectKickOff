@@ -2072,6 +2072,7 @@ GameObject:
   - component: {fileID: 6428715213116652469}
   - component: {fileID: 7341542659823185019}
   - component: {fileID: 7045114860918829516}
+  - component: {fileID: 2262994083640127097}
   m_Layer: 5
   m_Name: CardCreator
   m_TagString: Untagged
@@ -2122,7 +2123,7 @@ Canvas:
   m_VertexColorAlwaysGammaSpace: 0
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
-  m_SortingLayerID: 0
+  m_SortingLayerID: -682240973
   m_SortingOrder: 0
   m_TargetDisplay: 0
 --- !u!114 &6428715213116652469
@@ -2147,7 +2148,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
+  m_PresetInfoIsWorld: 1
 --- !u!114 &7341542659823185019
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2179,6 +2180,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   taskWidgetsList: {fileID: 8217061571528527405}
   todoListWidgetsList: {fileID: 6682329812958781243}
+--- !u!114 &2262994083640127097
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6831646938452881770}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a77b10dab5395548a20c60de80a52f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7174852666748223897
 GameObject:
   m_ObjectHideFlags: 0

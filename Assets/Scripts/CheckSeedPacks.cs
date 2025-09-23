@@ -15,7 +15,7 @@ public class CheckSeedPacks : MonoBehaviour
         {
             Debug.Log(item.Key);
             Debug.Log(item.Value);
-            if (item.Key == "Watering Cans")
+            if (item.Key == "Watering Cans" || item.Key == "Resolvant")
                 continue;
 
             if (item.Value > 0)
