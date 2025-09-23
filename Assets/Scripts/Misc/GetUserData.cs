@@ -29,11 +29,16 @@ public class TaskCardData
 }
 
 [Serializable]
-public class CurrencyData
+public class InventoryData
 {
-    public int coins;
-    public int wateringCans;
-    public int seedpackets;
+    public int Resolvant = 0;
+    public int NormalSeedPack = 0;
+    public int SpringSeedPack = 0;
+    public int FruitSeedPack = 0;
+    public int WinterSeedPack = 0;
+    public int SummerSeedPack = 0;
+    public int AutumnSeedPack = 0;
+    public int WateringCans = 0;
 }
 
 [Serializable]
@@ -53,6 +58,7 @@ public class SaveData
     public TodoCardData[] todoCardData;
     public TaskCardData[] taskCardData;
     public PlantCardData[] plantData;
+    public InventoryData inventoryData;
 }
 
 public static class GetUserData
@@ -132,8 +138,22 @@ public static class GetUserData
             };
         }
         
+        // Inventory Data
+        InventoryData inventorySaveData = new InventoryData
+        {
+            Resolvant = InventoryManager.GetItemCount("Resolvant"),
+            SpringSeedPack = InventoryManager.GetItemCount("Spring Seed Pack "),
+            NormalSeedPack = InventoryManager.GetItemCount("Normal Seed Pack"),
+            FruitSeedPack = InventoryManager.GetItemCount("Fruit Seed Pack"),
+            WinterSeedPack = InventoryManager.GetItemCount("Winter Seed Pack"),
+            SummerSeedPack = InventoryManager.GetItemCount("Summer Seed Pack"),
+            AutumnSeedPack = InventoryManager.GetItemCount("Autumn Seed Pack"),
+            WateringCans = InventoryManager.GetItemCount("Watering Cans")
+        };
         
+        //Put All Into Single Class
         SaveData saveData = new SaveData();
+        saveData.inventoryData = inventorySaveData;
         saveData.todoCardData = todoListSaveData;
         saveData.taskCardData = taskCardSaveData;
         saveData.plantData = plantsCardSaveData;

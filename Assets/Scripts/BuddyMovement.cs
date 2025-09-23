@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.AI;
 using Random = UnityEngine.Random;
 
-public class BuddyMovement : IUpdaterBase
+public class BuddyMovement : MonoBehaviour
 {
     
     [SerializeField] private Animator animator;
@@ -16,7 +16,14 @@ public class BuddyMovement : IUpdaterBase
 
     private void Awake()
     {
+        Debug.Log("ffffff");
         lastXCoord = this.transform.position.x;
+        GetPointOnNavMesh();
+    }
+    
+        
+    private void OnEnable()
+    {
         GetPointOnNavMesh();
     }
 
@@ -27,8 +34,9 @@ public class BuddyMovement : IUpdaterBase
       
     }
 
-    public override void SharedUpdate()
+    public void Update()
     {
+        Debug.Log("aa");
         float currentXCoord = this.transform.position.x;
         if (currentXCoord > lastXCoord)
         {
@@ -41,7 +49,7 @@ public class BuddyMovement : IUpdaterBase
         
         lastXCoord = currentXCoord;
         
-        if (Vector3.Distance(agent.transform.position, pointOnNavMesh) < 50f)
+        if (Vector3.Distance(agent.transform.position, pointOnNavMesh) < 20f)
         {
             animator.SetBool("isMoving", false);
             int randNumber = Random.Range(5, 10);
@@ -57,5 +65,4 @@ public class BuddyMovement : IUpdaterBase
             timePassed = 0;
         }
     }
-    
 }

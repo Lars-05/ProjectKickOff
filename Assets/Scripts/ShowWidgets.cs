@@ -1,3 +1,6 @@
+using System;
+using DG.Tweening;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class ShowWidgets : MonoBehaviour
@@ -10,7 +13,7 @@ public class ShowWidgets : MonoBehaviour
         taskWidgetsList.SetActive(true);
         todoListWidgetsList.SetActive(false);
     }
-    
+ 
     public void ShowTodoList()
     {
         taskWidgetsList.SetActive(false);

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.Experimental.GlobalIllumination;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
@@ -34,6 +35,7 @@ public class PlantCard: IUpdaterBase
     [SerializeField] private Image plantImage;
     [SerializeField] private Image buddyImage;
 
+    
     [SerializeField] private GameObject harvestButtonGO;
     [SerializeField] private GameObject waterButtonGO;
     [SerializeField] private GameObject prePlantUI;
@@ -43,7 +45,8 @@ public class PlantCard: IUpdaterBase
     [SerializeField] private GameObject objectToDisable;
 
     [SerializeField] private TMP_Dropdown dropdown;
-    
+
+    public UnityEvent<int> OnBuddieClaimed;
     private bool visible = true;
     private string rarity;
     private string pack;
@@ -312,7 +315,7 @@ public class PlantCard: IUpdaterBase
         plantImage.sprite = null;
         isDone = false;
         growingStatus.text = "Plant A buddy!";
-        
+        OnBuddieClaimed.Invoke(buddyID);
     }
     
     public void MakeVisible()
