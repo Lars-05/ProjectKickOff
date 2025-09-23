@@ -4,8 +4,13 @@ using System.Runtime.InteropServices;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class Transparent : IUpdaterBase
+public class Transparent : MonoBehaviour
 {
+    private void Awake()
+    {
+        Camera.main.backgroundColor = new Color(0, 0, 0, 0); // (0,0,0,0)
+    }
+
     [DllImport("user32.dll")] 
     static extern IntPtr GetActiveWindow();
     
@@ -47,7 +52,7 @@ public class Transparent : IUpdaterBase
         SetWindowPos(hwnd, HWND_TOPMOST, 0, 0, 0, 0, 0);
     }
 
-    public override void SharedUpdate()
+    public void Update()
     {
         var v3 = Input.mousePosition;
         v3.z = Mathf.Abs(Camera.main.transform.position.z - this.transform.position.z); 
