@@ -16,7 +16,7 @@ public class BuddyMovement : MonoBehaviour
 
     private void Awake()
     {
-        Debug.Log("ffffff");
+        movement = FindFirstObjectByType<movement>();
         lastXCoord = this.transform.position.x;
         GetPointOnNavMesh();
     }

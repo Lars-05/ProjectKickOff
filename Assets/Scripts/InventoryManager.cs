@@ -12,7 +12,7 @@ public static class InventoryManager
     
     public static Dictionary<string, int> inventory = new Dictionary<string, int>()
     {
-        {"Resolvant", 50},
+        {"Resolvant", 500},
         {"Spring Seed Pack", 0},
         {"Basic Seed Pack", 0},
         {"Fruit Seed Pack", 0},

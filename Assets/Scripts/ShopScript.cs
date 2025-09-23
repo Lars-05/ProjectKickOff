@@ -11,7 +11,7 @@ public class ShopScript : MonoBehaviour
    {
       if (CanAfford(10))
       {
-         GetItem("Basic Seed Pack", 1);
+         GetItem("Fruit Seed Pack", 1);
       }
 
 
@@ -21,7 +21,7 @@ public class ShopScript : MonoBehaviour
    {
       if (CanAfford(10))
       {
-         GetItem("Fruit Seed Pack", 1);
+         GetItem("Spring Seed Pack", 1);
       }
    }
    
@@ -29,7 +29,7 @@ public class ShopScript : MonoBehaviour
    {
       if (CanAfford(15))
       {
-         GetItem("Spring Seed Pack", 1);
+         GetItem("Summer Seed Pack", 1);
       }
    }
    
@@ -37,7 +37,7 @@ public class ShopScript : MonoBehaviour
    {
       if (CanAfford(15))
       {
-         GetItem("Summer Seed Pack", 1);
+         GetItem("Autumn Seed Pack", 1);
       }
    }
    
@@ -45,7 +45,7 @@ public class ShopScript : MonoBehaviour
    {
       if (CanAfford(15))
       {
-         GetItem("Autumn Seed Pack", 1);
+         GetItem("Winter Seed Pack", 1);
       }
    }
    
@@ -69,7 +69,7 @@ public class ShopScript : MonoBehaviour
    
    private void GetItem(string item, int amount)
    {
-      InventoryManager.RemoveItemFromInventory("item", amount);
+      InventoryManager.AddItemToInventory(item, amount);
    }
    
 }

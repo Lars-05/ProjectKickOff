@@ -14,7 +14,7 @@ public class PlantPotScript : IUpdaterBase, IPointerExitHandler, IPointerEnterHa
     private float timeBetweenStages;
     public void OnPointerDown(PointerEventData eventData)
     {
-        plantUI.SetActive(true);
+        plantCardScript.MakeVisible();
     }
     public void OnPointerEnter(PointerEventData eventData)
     {
@@ -44,8 +44,8 @@ public class PlantPotScript : IUpdaterBase, IPointerExitHandler, IPointerEnterHa
    
         if (plantCardScript.timeRemaining < plantCardScript.totalTime - index * timeBetweenStages)
         {
-            index += 1;
-            meshFilter.mesh = plantStages[index - 1];
+            //index += 1;
+            //meshFilter.mesh = plantStages[index - 1];
         }
 
     }
