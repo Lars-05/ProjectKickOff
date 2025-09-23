@@ -289,8 +289,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 5673849063264431869}
   m_HandleRect: {fileID: 8540434452060610994}
   m_Direction: 2
-  m_Value: 0
-  m_Size: 1
+  m_Value: 1
+  m_Size: 0.82858527
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -1780,6 +1780,7 @@ GameObject:
   - component: {fileID: 5691977460071160983}
   - component: {fileID: 2213451632794742345}
   - component: {fileID: 9068892675512344606}
+  - component: {fileID: 1650951744903135502}
   m_Layer: 5
   m_Name: ToDoListView
   m_TagString: Untagged
@@ -1876,6 +1877,19 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1650951744903135502
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8163350940372818605}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31a19414c41e5ae4aae2af33fee712f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShowMaskGraphic: 1
 --- !u!1 &9053045044880964242
 GameObject:
   m_ObjectHideFlags: 0
