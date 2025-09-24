@@ -1379,7 +1379,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 1850372140906466005}
   m_OnClick:
     m_PersistentCalls:
@@ -1843,6 +1843,7 @@ MonoBehaviour:
   objectToDisable: {fileID: 7465398587314576830}
   todoListTaskScripts: []
   todoListTaskTitle: {fileID: 1449177670370597158}
+  claimButton: {fileID: 4662697746999683953}
   todoListWidgetScript: {fileID: 0}
   todoListTitle: {fileID: 173399299581107648}
   visible: 1

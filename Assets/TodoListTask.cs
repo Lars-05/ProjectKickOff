@@ -11,7 +11,7 @@ public class TodoListTask : MonoBehaviour
 
     public void Configure(bool completed, string title)
     {
-        Debug.Log(title);
+
         crossedOutToggle.isOn = completed;
         titleField.text = title;
     }
@@ -23,6 +23,7 @@ public class TodoListTask : MonoBehaviour
         else {titleField.fontStyle = FontStyles.Normal;
             crossedOut = false;
         }
+        todoListScript.TestIfAllCrossedOut();
     }
     
     public void DeleteTask()

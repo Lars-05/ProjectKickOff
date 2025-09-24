@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class TodoListScript : IUpdaterBase
 {
@@ -11,6 +12,7 @@ public class TodoListScript : IUpdaterBase
     [SerializeField] private GameObject objectToDisable;
     public List<TodoListTask> todoListTaskScripts = new List<TodoListTask>();
     [SerializeField] private TextMeshProUGUI todoListTaskTitle;
+    [SerializeField] private Button claimButton ;
     [HideInInspector] public TodoListWidget todoListWidgetScript;
     
     
@@ -27,9 +29,26 @@ public class TodoListScript : IUpdaterBase
 
     public override void SharedUpdate()
     {
+    }
+
+    public void TestIfAllCrossedOut()
+    {
+        int crossedOutTasks = 0;
         foreach (var task in todoListTaskScripts)
         {
-            task.crossedOut = true;
+            if (task.crossedOut)
+            {
+                crossedOutTasks += 1; 
+            }
+        }
+
+        if (crossedOutTasks == todoListTaskScripts.Count)
+        {
+            claimButton.interactable = true;
+        }
+        else
+        {
+            claimButton.interactable = false;
         }
     }
 
