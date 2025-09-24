@@ -4,6 +4,6 @@ public class SaveButton : MonoBehaviour
 {
     public void awaw()
     {
-        GetUserData.GetUserSaveData();
+        GetUserData.SaveUserSaveData();
     }
 }

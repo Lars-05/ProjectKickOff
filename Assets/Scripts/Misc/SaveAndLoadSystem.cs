@@ -7,12 +7,12 @@ using System.Runtime.Serialization.Formatters.Binary;
 public static class SaveAndLoadSystem
 {
     
-    public static void SaveData(SaveData taskCardData)
+    public static void SaveData(SaveData Data)
     {
         BinaryFormatter formatter = new BinaryFormatter();
         string path = Application.persistentDataPath + "/userData.grd";
         FileStream stream = new FileStream(path, FileMode.Create);
-        formatter.Serialize(stream, taskCardData);
+        formatter.Serialize(stream, Data);
         stream.Close();
     }
 

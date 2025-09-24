@@ -72,7 +72,7 @@ public class SaveData
 public static class GetUserData
 {
     
-    public static void GetUserSaveData()
+    public static void SaveUserSaveData()
     {
         // Taskcards
         GameObject taskCardHolder = GameObject.Find("TaskCards");
