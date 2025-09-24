@@ -33,27 +33,27 @@ public class PlantPotScript : IUpdaterBase, IPointerExitHandler, IPointerEnterHa
     public void ResetID()
     {
         index = 0;
-        if (meshFilter != null && plantStages.Length > 0)
-        {
-            meshFilter.mesh = plantStages[0];
-        }
+        meshFilter.mesh = plantStages[1];
     }
 
     public override void SharedUpdate()
     {
-        timeBetweenStages = plantCardScript.totalTime / plantStages.Length;
         float elapsedTime = plantCardScript.totalTime - plantCardScript.timeRemaining;
-        int targetIndex = Mathf.FloorToInt(elapsedTime / timeBetweenStages);
-        Debug.Log(elapsedTime);
-        
-        targetIndex = Mathf.Clamp(targetIndex, 0, plantStages.Length - 1);
-
-        
-        if (targetIndex != index)
+        if (plantCardScript.totalTime > elapsedTime)
         {
-            index = targetIndex;
-            meshFilter.mesh = plantStages[index];
-            Debug.Log($"Plant progressed to stage {index}");
+
+
+            timeBetweenStages = plantCardScript.totalTime / plantStages.Length;
+            int targetIndex = Mathf.FloorToInt(elapsedTime / timeBetweenStages);
+
+            targetIndex = Mathf.Clamp(targetIndex, 0, plantStages.Length - 1);
+
+
+            if (targetIndex != index)
+            {
+                index = targetIndex;
+                meshFilter.mesh = plantStages[index];
+            }
         }
 
     }
