@@ -80,12 +80,14 @@ public class TaskCardScript : IUpdaterBase
     public void MakeVisible()
     {
         visible = true;
+        SoundFXManager.Instance.PlaySoundFXClip("select_002", this.transform, 1, false);
         objectToDisable.SetActive(true);
     }
     
     public void MakeInvisible()
     {
         visible = false;
+        SoundFXManager.Instance.PlaySoundFXClip("select_002", this.transform, 1, false);
         objectToDisable.SetActive(false);
     }
     

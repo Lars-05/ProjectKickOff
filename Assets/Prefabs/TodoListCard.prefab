@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3760880270555025143}
   - component: {fileID: 5192607256995059192}
   - component: {fileID: 6765806436390213350}
+  - component: {fileID: 1639818718443201286}
   m_Layer: 5
   m_Name: AddTodoTaskButton
   m_TagString: Untagged
@@ -133,6 +134,22 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &1639818718443201286
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 277821465666008378}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b95f4476b52670d4c9a44cbfe27e1eec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hoverSFXVolume: 0.1
+  hoverSFXName: BadBoop
+  clickSFXVolume: 1
+  clickSFXName: Make task
 --- !u!1 &1160127987498846796
 GameObject:
   m_ObjectHideFlags: 0
@@ -1257,6 +1274,7 @@ GameObject:
   - component: {fileID: 7225643059081599512}
   - component: {fileID: 1850372140906466005}
   - component: {fileID: 4662697746999683953}
+  - component: {fileID: 1098873721068499680}
   m_Layer: 5
   m_Name: ClaimRewardButton
   m_TagString: Untagged
@@ -1378,6 +1396,22 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &1098873721068499680
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5800556739837163989}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b95f4476b52670d4c9a44cbfe27e1eec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hoverSFXVolume: 0.1
+  hoverSFXName: BadBoop
+  clickSFXVolume: 0
+  clickSFXName: 
 --- !u!1 &5926336017367778211
 GameObject:
   m_ObjectHideFlags: 0

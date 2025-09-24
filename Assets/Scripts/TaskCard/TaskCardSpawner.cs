@@ -117,11 +117,13 @@ public class TaskCardSpawner : MonoBehaviour
     public void MakeVisible()
     {
         objectToDisable.SetActive(true);
+        SoundFXManager.Instance.PlaySoundFXClip("select_002", this.transform, 1, false);
     }
     
     public void MakeInvisible()
     {
         objectToDisable.SetActive(false);
+        SoundFXManager.Instance.PlaySoundFXClip("select_002", this.transform, 1, false);
     }
     
     

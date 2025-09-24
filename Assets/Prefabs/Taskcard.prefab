@@ -1509,6 +1509,7 @@ GameObject:
   - component: {fileID: 1066533304699099413}
   - component: {fileID: 6204553961129679545}
   - component: {fileID: 4357480617059662115}
+  - component: {fileID: 323624902812883298}
   m_Layer: 5
   m_Name: StartStopButton
   m_TagString: Untagged
@@ -1630,6 +1631,22 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &323624902812883298
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6690095861715368971}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b95f4476b52670d4c9a44cbfe27e1eec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hoverSFXVolume: 0.1
+  hoverSFXName: BadBoop
+  clickSFXVolume: 0
+  clickSFXName: 
 --- !u!1 &7394322027683628428
 GameObject:
   m_ObjectHideFlags: 0
@@ -1778,6 +1795,7 @@ GameObject:
   - component: {fileID: 3137626074415476845}
   - component: {fileID: 568247600482982256}
   - component: {fileID: 6956922417729972912}
+  - component: {fileID: 5230455029199676578}
   m_Layer: 5
   m_Name: ClaimRewardButton
   m_TagString: Untagged
@@ -1899,6 +1917,22 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &5230455029199676578
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7984776991084876095}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b95f4476b52670d4c9a44cbfe27e1eec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hoverSFXVolume: 0.1
+  hoverSFXName: BadBoop
+  clickSFXVolume: 0
+  clickSFXName: 
 --- !u!1 &8801947163865480519
 GameObject:
   m_ObjectHideFlags: 0
