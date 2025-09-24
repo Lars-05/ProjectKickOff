@@ -3,6 +3,10 @@ using UnityEngine;using UnityEngine.EventSystems;
 
 public class TweenScale : MonoBehaviour, IPointerExitHandler, IPointerEnterHandler, IPointerDownHandler, IPointerUpHandler
 {
+    public float hoverSFXVolume;
+    public string hoverSFXName; 
+    public float clickSFXVolume;
+    public string clickSFXName; 
     private Vector3 orginalScale;
     public void Awake()
     {
@@ -10,14 +14,16 @@ public class TweenScale : MonoBehaviour, IPointerExitHandler, IPointerEnterHandl
     }
     public void OnPointerDown(PointerEventData eventData)
     {
-        
+        SoundFXManager.Instance.PlaySoundFXClip(clickSFXName, this.transform, clickSFXVolume, true);
     }
     
     public void OnPointerEnter(PointerEventData eventData)
     {
+        SoundFXManager.Instance.PlaySoundFXClip(hoverSFXName, this.transform, hoverSFXVolume, true);
         transform.DOKill();
         transform.DOScale(new Vector3(orginalScale.x + 0.1f, orginalScale.z + 0.1f, orginalScale.z + 0.1f), 0.1f)
             .SetEase(Ease.OutBounce);
+        
     }
     
     public void OnPointerExit(PointerEventData eventData)

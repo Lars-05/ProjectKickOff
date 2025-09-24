@@ -10,11 +10,13 @@ public class TodoListScript : IUpdaterBase
     [SerializeField] private GameObject objectToSpawnUnder;
     [SerializeField] private GameObject objectToDisable;
     public List<TodoListTask> todoListTaskScripts = new List<TodoListTask>();
-    [SerializeField] private TextMeshProUGUI todoListTaskTitle; 
+    [SerializeField] private TextMeshProUGUI todoListTaskTitle;
+    [HideInInspector] public TodoListWidget todoListWidgetScript;
     
     
     public TextMeshProUGUI todoListTitle;
     [HideInInspector] public bool visible = true;
+    
 
     public void ConfigureTodoList(string title)
     {
@@ -50,6 +52,12 @@ public class TodoListScript : IUpdaterBase
         
         newTodoTaskPrefabScript.Configure(completed, title);
         
+    }
+    
+    public void ClaimReward()
+    {
+        InventoryManager.AddItemToInventory("Resolvant", 3);
+        todoListWidgetScript.DeleteTodoList();
     }
     
     public void MakeVisible()

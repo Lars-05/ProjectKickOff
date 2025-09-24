@@ -13,8 +13,8 @@ public class TaskCardSpawner : MonoBehaviour
     [SerializeField] private GameObject objectToSpawnTaskCardWidgetUnder;
     
     [SerializeField] private TextMeshProUGUI errorMessageField;
-    [SerializeField] private TextMeshProUGUI cardTitleField;
-    [SerializeField] private TextMeshProUGUI cardDescriptionField;
+    [SerializeField] private TMP_InputField cardTitleField;
+    [SerializeField] private TMP_InputField cardDescriptionField;
     
     [SerializeField] private TMP_InputField cardTimeHoursField;
     [SerializeField] private TMP_InputField cardTimeMinutesField;

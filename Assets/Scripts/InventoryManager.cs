@@ -7,7 +7,7 @@ using UnityEngine.Events;
 
 public static class InventoryManager
 {
-    
+    public static bool recentChangeOccured = false;
     public static UnityEvent OnItemAdded = new UnityEvent();
     
     public static Dictionary<string, int> inventory = new Dictionary<string, int>()
@@ -25,11 +25,12 @@ public static class InventoryManager
 
     public static void RecieveData()
     {
-        SaveData saveData = SaveAndLoadSystem.LoadData();
-        if (saveData.inventoryData == null)
+        if(SaveAndLoadSystem.LoadData() == null)
         {
             return;
         }
+        
+        SaveData saveData = SaveAndLoadSystem.LoadData();
         
         AddItemToInventory("Resolvant", saveData.inventoryData.Resolvant);
         AddItemToInventory("Basic Seed Pack", saveData.inventoryData.NormalSeedPack);
@@ -49,12 +50,14 @@ public static class InventoryManager
     }
     public static void AddItemToInventory(string item, int amount)
     {
+        recentChangeOccured = true;
         inventory[item] += amount;
         OnItemAdded.Invoke();
     }
     
     public static void RemoveItemFromInventory(string item, int amount)
     {
+        recentChangeOccured = true;
         inventory[item] -= amount;
         OnItemAdded.Invoke();
     }

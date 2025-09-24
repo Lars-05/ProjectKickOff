@@ -26,7 +26,7 @@ public class RotateBasedOnMouseX : MonoBehaviour, IPointerDownHandler, IPointerE
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        Debug.Log("I LOVE WOMAN!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+   
     }
 
     public void OnPointerExit(PointerEventData eventData)

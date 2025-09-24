@@ -27,13 +27,18 @@ public class TodoListSpawner : MonoBehaviour
         
         foreach (TodoCardData todoCardData in savedTodoCardData)
         {
+            GameObject newTodoListWidgetPrefab = Instantiate(todoTaskWidgetPrefab, this.transform.position, Quaternion.identity, objectToSpawnWidgetUnder.transform);
+            TodoListWidget newTodoListWidgetPrefabScript = newTodoListWidgetPrefab.GetComponent<TodoListWidget>();
             
             GameObject newTodoListPrefab = Instantiate(todoTaskPrefab, this.transform.position, Quaternion.identity, objectToSpawnTodoListUnder.transform);
             TodoListScript newTodoListPrefabScript = newTodoListPrefab.GetComponent<TodoListScript>();
+            
             newTodoListPrefabScript.visible = todoCardData.visible;
             newTodoListPrefabScript.ConfigureTodoList(todoCardData.cardTitle);
-          
-
+            newTodoListPrefabScript.todoListWidgetScript = newTodoListWidgetPrefabScript; 
+            newTodoListWidgetPrefabScript.todoListScript = newTodoListPrefabScript;
+            newTodoListWidgetPrefabScript.Configure(todoCardData.cardTitle, todoCardData.visible);
+            
             for (int i = 0; i < todoCardData.todoCardTitles.Length; i++)
             {
                 Debug.Log(todoCardData.todoCardTitles[i]);
@@ -41,24 +46,23 @@ public class TodoListSpawner : MonoBehaviour
                 newTodoListPrefabScript.SpawnTodoTask(todoCardData.todoCardTitles[i], todoCardData.taskStatus[i]);
             }
             
-            GameObject newTodoListWidgetPrefab = Instantiate(todoTaskWidgetPrefab, this.transform.position, Quaternion.identity, objectToSpawnWidgetUnder.transform);
-            TodoListWidget newTodoListWidgetPrefabScript = newTodoListWidgetPrefab.GetComponent<TodoListWidget>();
-            newTodoListWidgetPrefabScript.todoListScript = newTodoListPrefabScript;
-            newTodoListWidgetPrefabScript.Configure(todoCardData.cardTitle, todoCardData.visible);
+            
         }
     }
     public void CheckInput()
     {
         if (stringInputCorrect)
         {
+            GameObject newTodoListWidgetPrefab = Instantiate(todoTaskWidgetPrefab, this.transform.position, Quaternion.identity, objectToSpawnWidgetUnder.transform);
+            TodoListWidget newTodoListWidgetPrefabScript = newTodoListWidgetPrefab.GetComponent<TodoListWidget>();
+
             SetErrorMessage(string.Empty);
             GameObject newTodoListPrefab = Instantiate(todoTaskPrefab, this.transform.position, Quaternion.identity, objectToSpawnTodoListUnder.transform);
             TodoListScript newTodoListPrefabScript = newTodoListPrefab.GetComponent<TodoListScript>();
+            newTodoListPrefabScript.todoListWidgetScript = newTodoListWidgetPrefabScript; 
             
-            GameObject newTodoListWidgetPrefab = Instantiate(todoTaskWidgetPrefab, this.transform.position, Quaternion.identity, objectToSpawnWidgetUnder.transform);
-            TodoListWidget newTodoListWidgetPrefabScript = newTodoListWidgetPrefab.GetComponent<TodoListWidget>();
+      
             newTodoListWidgetPrefabScript.todoListScript = newTodoListPrefabScript;
-            
             newTodoListWidgetPrefabScript.Configure(cardTitleField.text, true);
             newTodoListPrefabScript.ConfigureTodoList(cardTitleField.text);
             

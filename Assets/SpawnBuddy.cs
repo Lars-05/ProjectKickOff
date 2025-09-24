@@ -16,6 +16,7 @@ public class SpawnBuddy : MonoBehaviour
     
     public void SpawnBuddyWithID(int buddyID)
     { 
+        Debug.Log("ffffffff");
         GameObject newBuddyPrefab = Instantiate(buddyPrefab, spawnPoint.transform.position, Quaternion.identity, objectToSpawnUnder.transform);
         SpriteRenderer buddySpriteRenderer = newBuddyPrefab.GetComponentInChildren<SpriteRenderer>();
         buddySpriteRenderer.sprite = buddieSprites[buddyID];

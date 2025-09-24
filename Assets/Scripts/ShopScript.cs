@@ -4,7 +4,10 @@ public class ShopScript : MonoBehaviour
 {
    public void BasicSeedPackClicked()
    {
-      InventoryManager.AddItemToInventory("Basic Seed Pack", 1);
+      if (CanAfford(10))
+      {
+         GetItem("Basic Seed Pack", 1);
+      }
    }
    
    public void FruitSeedPackClicked()
@@ -13,8 +16,6 @@ public class ShopScript : MonoBehaviour
       {
          GetItem("Fruit Seed Pack", 1);
       }
-
-
    }
    
    public void SpringSeedPackClicked()

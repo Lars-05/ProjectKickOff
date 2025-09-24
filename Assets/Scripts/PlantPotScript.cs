@@ -3,6 +3,7 @@ using System.Diagnostics;
 using DG.Tweening;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using Debug = UnityEngine.Debug;
 
 public class PlantPotScript : IUpdaterBase, IPointerExitHandler, IPointerEnterHandler, IPointerDownHandler, IPointerUpHandler
 {
@@ -32,20 +33,27 @@ public class PlantPotScript : IUpdaterBase, IPointerExitHandler, IPointerEnterHa
     public void ResetID()
     {
         index = 0;
-    }
-        
-    public void Awake()
-    {
-        timeBetweenStages = plantCardScript.totalTime / plantStages.Length;
+        if (meshFilter != null && plantStages.Length > 0)
+        {
+            meshFilter.mesh = plantStages[0];
+        }
     }
 
     public override void SharedUpdate()
     {
-   
-        if (plantCardScript.timeRemaining < plantCardScript.totalTime - index * timeBetweenStages)
+        timeBetweenStages = plantCardScript.totalTime / plantStages.Length;
+        float elapsedTime = plantCardScript.totalTime - plantCardScript.timeRemaining;
+        int targetIndex = Mathf.FloorToInt(elapsedTime / timeBetweenStages);
+        Debug.Log(elapsedTime);
+        
+        targetIndex = Mathf.Clamp(targetIndex, 0, plantStages.Length - 1);
+
+        
+        if (targetIndex != index)
         {
-            //index += 1;
-            //meshFilter.mesh = plantStages[index - 1];
+            index = targetIndex;
+            meshFilter.mesh = plantStages[index];
+            Debug.Log($"Plant progressed to stage {index}");
         }
 
     }

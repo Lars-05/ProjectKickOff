@@ -6,25 +6,33 @@ public class SidebarScript : MonoBehaviour
     [SerializeField] private GameObject taskManager;
     [SerializeField] private GameObject shop;
     [SerializeField] private GameObject plantShelf;
-
-    private GameObject[] panels;
-
-    private void Awake()
+    
+    public void OnShopButtonPressed()
     {
-        panels = new[] { buddyGarden, taskManager, shop, plantShelf };
+        plantShelf.SetActive(false);
+        buddyGarden.SetActive(false);
+        taskManager.SetActive(false);
+        shop.SetActive(true);
     }
-
-    private void ShowPanel(GameObject panelToShow)
+    public void OnTaskManagerButtonPressed()
     {
-        foreach (var panel in panels)
-        {
-            panel.SetActive(false); 
-        }
-        panelToShow.SetActive(true); 
+        plantShelf.SetActive(false);
+        buddyGarden.SetActive(false);
+        taskManager.SetActive(true);
+        shop.SetActive(false);
     }
-
-    public void OnShopButtonPressed() => ShowPanel(shop);
-    public void OnTaskManagerButtonPressed() => ShowPanel(taskManager);
-    public void OnPlantShelfButtonPressed() => ShowPanel(plantShelf);
-    public void OnBuddyGardenButtonPressed() => ShowPanel(buddyGarden);
+    public void OnPlantShelfButtonPressed()
+    {
+        plantShelf.SetActive(true);
+        buddyGarden.SetActive(false);
+        taskManager.SetActive(false);
+        shop.SetActive(false);
+    }
+    public void OnBuddyGardenButtonPressed() 
+    {
+        plantShelf.SetActive(false);
+        buddyGarden.SetActive(true);
+        taskManager.SetActive(false);
+        shop.SetActive(false);
+    }
 }

@@ -44,6 +44,7 @@ public class PlantCard: IUpdaterBase
     [SerializeField] private GameObject indicator;
     [SerializeField] private GameObject objectToDisable;
 
+    [SerializeField] private Button plantingButton;
     [SerializeField] private TMP_Dropdown dropdown;
 
     public UnityEvent<int> OnBuddieClaimed;
@@ -53,7 +54,7 @@ public class PlantCard: IUpdaterBase
     
     public void Configure(float savedTimeRemaining, float savedtotalTime, int savedBuddyID, bool savedPlantedBuddy, bool savedNeedsWatering, bool savedIsDone)
     {
-      
+    
         isDone = savedIsDone;
         timeRemaining = savedTimeRemaining;
         totalTime = savedtotalTime;
@@ -91,6 +92,7 @@ public class PlantCard: IUpdaterBase
     }
     public override void SharedUpdate()
     {
+        plantingButton.interactable = dropdown.options.Count > 0; 
         if (plantedBuddy)
         {
             CountDown();
@@ -99,6 +101,7 @@ public class PlantCard: IUpdaterBase
     
     public void PlantBuddy()
     {
+        SoundFXManager.Instance.PlaySoundFXClip("dirt1", this.transform, 1, false);
         plantedBuddy = true;
         prePlantUI.SetActive(false);
         pack = dropdown.options[dropdown.value].text;
@@ -248,7 +251,6 @@ public class PlantCard: IUpdaterBase
     }
     private void CountDown()
     {
-        Debug.Log(buddyID);
         if (!plantedBuddy || needsWatering)
         {
             return;
@@ -281,9 +283,10 @@ public class PlantCard: IUpdaterBase
 
     public void Water()
     {
-  ;
+  ;     
         if (InventoryManager.GetItemCount("Watering Cans") >0)
         {
+            SoundFXManager.Instance.PlaySoundFXClip("water_pouring2", this.transform, 1, false);
             timeRemaining -= 5;
             needsWatering = false;
             growingStatus.text = "Your Buddy Is Growing!"; 
@@ -297,6 +300,7 @@ public class PlantCard: IUpdaterBase
     
     public void Harvest()
     {
+        SoundFXManager.Instance.PlaySoundFXClip("cheerful_sound1", this.transform, 1, false);
         proPlantUI.SetActive(false);
         plantedBuddy = false;
         harvestButtonGO.SetActive(false);
@@ -309,10 +313,11 @@ public class PlantCard: IUpdaterBase
     
     public void ClaimReward()
     {
+        SoundFXManager.Instance.PlaySoundFXClip("BadBoop", this.transform, 1, false);
         plantedBuddy = false;
         rewardUI.SetActive(false);
         prePlantUI.SetActive(true);
-        plantImage.sprite = null;
+        buddyImage.sprite = null;
         isDone = false;
         growingStatus.text = "Plant A buddy!";
         OnBuddieClaimed.Invoke(buddyID);
@@ -321,12 +326,14 @@ public class PlantCard: IUpdaterBase
     public void MakeVisible()
     {
         visible = true;
+        SoundFXManager.Instance.PlaySoundFXClip("select_002", this.transform, 1, false);
         objectToDisable.SetActive(true);
     }
     
     public void MakeInvisible()
     {
         visible = false;
+        SoundFXManager.Instance.PlaySoundFXClip("select_002", this.transform, 1, false);
         objectToDisable.SetActive(false);
     }
 }
