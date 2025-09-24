@@ -35,18 +35,19 @@ public class TaskCardSpawner : MonoBehaviour
         
         foreach (TaskCardData taskCardData in taskCardSavedData)
         {
-           
+     
             GameObject taskcard = Instantiate(taskCardPrefab, this.transform.position, Quaternion.identity,  objectToSpawnTaskCardUnder.transform);
-            TaskCardScript taskcardScript = taskcard.GetComponent<TaskCardScript>();
-            
-            taskcardScript.ConfigureCard(taskCardData.title, taskCardData.description, taskCardData.timeRemaining, taskCardData.multiplier);
-            taskcardScript.visible = taskCardData.visible;
-            
-            
             GameObject newTaskCardWidgetPrefab = Instantiate(taskCardWidgetPrefab, this.transform.position, Quaternion.identity, objectToSpawnTaskCardWidgetUnder.transform);
+            TaskCardScript taskcardScript = taskcard.GetComponent<TaskCardScript>();
             TaskCardWidget newTaskCardWidgetPrefabScript = newTaskCardWidgetPrefab.GetComponent<TaskCardWidget>();
             newTaskCardWidgetPrefabScript.taskCardScript = taskcardScript;
             newTaskCardWidgetPrefabScript.titleField.text = taskCardData.title;
+       
+  
+            
+            taskcardScript.ConfigureCard(taskCardData.title, taskCardData.description, taskCardData.timeRemaining, taskCardData.multiplier);
+            taskcardScript.visible = taskCardData.visible;
+            taskcardScript.taskCardWidget = newTaskCardWidgetPrefabScript;
             
         }
     }
@@ -66,14 +67,16 @@ public class TaskCardSpawner : MonoBehaviour
         if (intInputCorrect && stringInputCorrect)
         {
             SetErrorMessage(string.Empty);
+             
+            GameObject newTaskCardWidgetPrefab = Instantiate(taskCardWidgetPrefab, objectToSpawnTaskCardWidgetUnder.transform.position, Quaternion.identity, objectToSpawnTaskCardWidgetUnder.transform);
+            TaskCardWidget newTaskCardWidgetPrefabScript = newTaskCardWidgetPrefab.GetComponent<TaskCardWidget>();
+            newTaskCardWidgetPrefabScript.titleField.text = cardTitleField.text;
             GameObject taskcard = Instantiate(taskCardPrefab, this.transform.position, Quaternion.identity,  objectToSpawnTaskCardUnder.transform);
             TaskCardScript taskcardScript = taskcard.GetComponent<TaskCardScript>();
             taskcardScript.ConfigureCard(cardTitleField.text, cardDescriptionField.text, seconds, MathF.Floor(seconds / 360f));
-            
-            GameObject newTaskCardWidgetPrefab = Instantiate(taskCardWidgetPrefab, objectToSpawnTaskCardWidgetUnder.transform.position, Quaternion.identity, objectToSpawnTaskCardWidgetUnder.transform);
-            TaskCardWidget newTaskCardWidgetPrefabScript = newTaskCardWidgetPrefab.GetComponent<TaskCardWidget>();
+            taskcardScript.taskCardWidget = newTaskCardWidgetPrefabScript;
             newTaskCardWidgetPrefabScript.taskCardScript = taskcardScript;
-            newTaskCardWidgetPrefabScript.titleField.text = cardTitleField.text;
+        
             MakeInvisible();
         }
         else if(!intInputCorrect)

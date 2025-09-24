@@ -73,9 +73,10 @@ public class TaskCardScript : IUpdaterBase
 
     public void ClaimReward()
     {
-        taskCardWidget.DeleteTaskCardAndWidget();
         InventoryManager.AddItemToInventory("Resolvant", 3);
+        taskCardWidget.DeleteTaskCardAndWidget();
     }
+    
     public void MakeVisible()
     {
         visible = true;
