@@ -36,7 +36,6 @@ public class BuddyMovement : MonoBehaviour
 
     public void Update()
     {
-        Debug.Log("aa");
         float currentXCoord = this.transform.position.x;
         if (currentXCoord > lastXCoord)
         {

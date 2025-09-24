@@ -7,6 +7,13 @@ using UnityEngine;
 
 
 [Serializable]
+public class BuddyData
+{
+    public int[] buddyIds;
+}
+
+
+[Serializable]
 public class PlantCardData
 {
     public float timeRemaining;
@@ -55,6 +62,7 @@ public class TodoCardData
 [Serializable]
 public class SaveData
 {
+    public BuddyData buddyData;
     public TodoCardData[] todoCardData;
     public TaskCardData[] taskCardData;
     public PlantCardData[] plantData;
@@ -150,9 +158,19 @@ public static class GetUserData
             AutumnSeedPack = InventoryManager.GetItemCount("Autumn Seed Pack"),
             WateringCans = InventoryManager.GetItemCount("Watering Cans")
         };
+
+
+        SpawnBuddy spawnBuddyScript = GameObject.FindFirstObjectByType<SpawnBuddy>();
+        
+        BuddyData BuddyData = new BuddyData
+        {
+            buddyIds = spawnBuddyScript.buddyIds.ToArray()
+        }; 
+        
         
         //Put All Into Single Class
         SaveData saveData = new SaveData();
+        saveData.buddyData = BuddyData;
         saveData.inventoryData = inventorySaveData;
         saveData.todoCardData = todoListSaveData;
         saveData.taskCardData = taskCardSaveData;
