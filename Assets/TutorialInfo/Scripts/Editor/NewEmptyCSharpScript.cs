@@ -11,7 +11,7 @@ public class TMPFontReplacer
         TMP_FontAsset newFont = Selection.activeObject as TMP_FontAsset;
         if (newFont == null)
         {
-            Debug.LogError("Select a TMP_FontAsset in the Project window first!");
+     
             return;
         }
 
@@ -22,8 +22,7 @@ public class TMPFontReplacer
             text.font = newFont;
             EditorUtility.SetDirty(text);
         }
-
-        Debug.Log("Replaced TMP font on " + allText.Length + " TMP_Text objects.");
+        
     }
 }
 #endif

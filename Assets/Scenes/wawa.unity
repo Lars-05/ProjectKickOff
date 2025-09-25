@@ -349,6 +349,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1852052175}
+        m_TargetAssemblyTypeName: PlantPotScript, Assembly-CSharp
+        m_MethodName: ResetID
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!224 &2655594
 RectTransform:
   m_ObjectHideFlags: 0
@@ -17837,7 +17849,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &614387652
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21578,6 +21590,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1218035774}
+        m_TargetAssemblyTypeName: PlantPotScript, Assembly-CSharp
+        m_MethodName: ResetID
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!224 &706160883
 RectTransform:
   m_ObjectHideFlags: 0
@@ -22531,6 +22555,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: SpawnBuddy, Assembly-CSharp
         m_MethodName: SpawnBuddyWithID
         m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1909541955}
+        m_TargetAssemblyTypeName: PlantPotScript, Assembly-CSharp
+        m_MethodName: ResetID
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -24188,6 +24224,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: SpawnBuddy, Assembly-CSharp
         m_MethodName: SpawnBuddyWithID
         m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 457330717}
+        m_TargetAssemblyTypeName: PlantPotScript, Assembly-CSharp
+        m_MethodName: ResetID
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -26169,6 +26217,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: SpawnBuddy, Assembly-CSharp
         m_MethodName: SpawnBuddyWithID
         m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 7243596426028069466}
+        m_TargetAssemblyTypeName: PlantPotScript, Assembly-CSharp
+        m_MethodName: ResetID
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -29116,6 +29176,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: SpawnBuddy, Assembly-CSharp
         m_MethodName: SpawnBuddyWithID
         m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1249378132}
+        m_TargetAssemblyTypeName: PlantPotScript, Assembly-CSharp
+        m_MethodName: ResetID
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -33959,6 +34031,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1197936392}
+        m_TargetAssemblyTypeName: PlantPotScript, Assembly-CSharp
+        m_MethodName: ResetID
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1193741600
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35022,6 +35106,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: SpawnBuddy, Assembly-CSharp
         m_MethodName: SpawnBuddyWithID
         m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 7458702148355761201}
+        m_TargetAssemblyTypeName: PlantPotScript, Assembly-CSharp
+        m_MethodName: ResetID
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -39850,6 +39946,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 737232396}
+        m_TargetAssemblyTypeName: PlantPotScript, Assembly-CSharp
+        m_MethodName: ResetID
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!224 &1339998390
 RectTransform:
   m_ObjectHideFlags: 0
@@ -44605,6 +44713,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 393182848}
+        m_TargetAssemblyTypeName: PlantPotScript, Assembly-CSharp
+        m_MethodName: ResetID
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!224 &1505758204
 RectTransform:
   m_ObjectHideFlags: 0
@@ -46318,6 +46438,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: SpawnBuddy, Assembly-CSharp
         m_MethodName: SpawnBuddyWithID
         m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 296964492}
+        m_TargetAssemblyTypeName: PlantPotScript, Assembly-CSharp
+        m_MethodName: ResetID
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -49978,6 +50110,10 @@ PrefabInstance:
       objectReference: {fileID: 597569092}
     - target: {fileID: 4738594492712051958, guid: 0330a9ed1533bb047a1336d24152beaf, type: 3}
       propertyPath: OnBuddieClaimed.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4738594492712051958, guid: 0330a9ed1533bb047a1336d24152beaf, type: 3}
+      propertyPath: OnBuddieClaimed.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4738594492712051958, guid: 0330a9ed1533bb047a1336d24152beaf, type: 3}
@@ -49985,7 +50121,15 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2110114345}
     - target: {fileID: 4738594492712051958, guid: 0330a9ed1533bb047a1336d24152beaf, type: 3}
+      propertyPath: OnBuddieClaimed.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 2896136297758102884}
+    - target: {fileID: 4738594492712051958, guid: 0330a9ed1533bb047a1336d24152beaf, type: 3}
       propertyPath: OnBuddieClaimed.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4738594492712051958, guid: 0330a9ed1533bb047a1336d24152beaf, type: 3}
+      propertyPath: OnBuddieClaimed.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4738594492712051958, guid: 0330a9ed1533bb047a1336d24152beaf, type: 3}
@@ -49993,11 +50137,23 @@ PrefabInstance:
       value: SpawnBuddyWithID
       objectReference: {fileID: 0}
     - target: {fileID: 4738594492712051958, guid: 0330a9ed1533bb047a1336d24152beaf, type: 3}
+      propertyPath: OnBuddieClaimed.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: ResetID
+      objectReference: {fileID: 0}
+    - target: {fileID: 4738594492712051958, guid: 0330a9ed1533bb047a1336d24152beaf, type: 3}
       propertyPath: OnBuddieClaimed.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: SpawnBuddy, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 4738594492712051958, guid: 0330a9ed1533bb047a1336d24152beaf, type: 3}
+      propertyPath: OnBuddieClaimed.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: PlantPotScript, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4738594492712051958, guid: 0330a9ed1533bb047a1336d24152beaf, type: 3}
       propertyPath: OnBuddieClaimed.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 4738594492712051958, guid: 0330a9ed1533bb047a1336d24152beaf, type: 3}
+      propertyPath: OnBuddieClaimed.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 5371420617539802477, guid: 0330a9ed1533bb047a1336d24152beaf, type: 3}
@@ -54983,6 +55139,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: SpawnBuddy, Assembly-CSharp
         m_MethodName: SpawnBuddyWithID
         m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 664632354}
+        m_TargetAssemblyTypeName: PlantPotScript, Assembly-CSharp
+        m_MethodName: ResetID
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
